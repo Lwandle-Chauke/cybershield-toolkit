@@ -11,12 +11,15 @@ app = FastAPI(
 # CORS Configuration (will be restricted in production)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://localhost:5173", "https://cyber-shield-toolkit.netlify.app"],
+    allow_origins=[
+        "http://localhost:3000",
+        "http://localhost:5173",
+        "https://cyber-shield-toolkit.netlify.app",
+    ],
     allow_credentials=False,
     allow_methods=["GET", "POST"],
     allow_headers=["Content-Type"],
 )
-
 # Include routes
 app.include_router(routes.router)
 
