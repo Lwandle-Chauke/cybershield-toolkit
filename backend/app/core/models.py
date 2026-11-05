@@ -4,7 +4,9 @@ from datetime import datetime
 
 class AnalysisResult(BaseModel):
     """Base model for analysis results"""
-    model_config = ConfigDict(json_encoders={datetime: lambda v: v.isoformat()})
+    model_config = ConfigDict(
+        json_encoders={datetime: lambda v: v.isoformat()}
+    )
     
     timestamp: datetime
     severity: str  # "Critical", "High", "Medium", "Low", "Info"
